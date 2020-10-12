@@ -14,7 +14,7 @@ public class Employee
         var employee3 = new Employee { FirstName = "hareram", Surname = "lamichhane", Address = "Ktm", Salary = 100.0 };
         var employee4 = new Employee { FirstName = "laxmi", Surname = "dhungana", Address = "Ktm", Salary = 100.0 };
         var employee5 = new Employee { FirstName = "hardik", Surname = "kami", Address = "Ktm", Salary = 100.0 };
-        var employee6 = new Employee { FirstName = "Bishnu", Surname = "Rawal", Address = "Ktm", Salary = 100.0 };
+        var employee6 = new Employee { FirstName = "bishnuu", Surname = "Rawal", Address = "Ktm", Salary = 100.0 };
 
         var employees = new List<Employee> { employee1, employee2, employee3, employee4, employee5, employee6 };
         return employees;
