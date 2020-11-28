@@ -3,12 +3,10 @@ using System.Collections.Generic;
 
 public class Employee
 {
-    [Required (EttorMessage="FirstNmae required")]
+    [Required (ErrorMessage="FirstNmae required")]
     [Display(Name ="First Name")]
-     [Required]
     public string FirstName { get; set; }
-    [Required]
-     [Required(ErrorMessage= "Lastname required")]
+     [Required (ErrorMessage= "Lastname required")]
     [Display(Name ="Last Name")]
     public string Surname { get; set; }
     public string Address { get; set; }
