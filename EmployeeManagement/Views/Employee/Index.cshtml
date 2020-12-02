@@ -1,11 +1,8 @@
-@Model List<Employee>
-
+@model List<Employee>
 @{
   ViewData["Title"] = "Employee Home";
 }
-
 <h1>Displying all employees...</h1>
-
 <table class="table">
   <thead class="thead-dark">
     <tr>
@@ -17,18 +14,27 @@
       <th scope="col">Salary</th>
     </tr>
   </thead>
-  <tbody>   
+   <tbody>
     @for (int i = 0; i < Model.Count; i++)
     {
-        <tr>
-          <td>@(i+1)</td>
+      <tr>
+        <td>@(i+1)</td>
+        <td>
+          @{
+            string fn = Model[i].FirstName;
+          }
+          <a href="/employee/detail?id=@Model[i].Id">@fn</a>
+        </td>
+        <td>@Model[i].Surname</td>
+        <td>@Model[i].Address</td>
+        <td>@Model[i].Gender</td>
+        <td>@Model[i].Salary</td>
+
+        <form asp-controller="Employee" asp-action="Delete" asp-route-id="@Model[i].Id" method="POST">
+          <td>  <input type="submit" value="Delete">
           <td>
-           <a href="/employee/detail?FirstName=@Model[i].FirstName">@Model[i].FirstName<a/></td>
-          <td>@Model[i].Surname</td>
-          <td>@Model[i].Address</td>
-          <td>@Model[i].Gender</td>
-          <td>@Model[i].Salary</td>
-        </tr>
+        </form>
+      </tr>
     }
   </tbody>
 </table>
