@@ -12,6 +12,7 @@ public class Employee
     public string Address { get; set; }
     public char Gender { get; set; } = 'M';
     public double Salary { get; set; }
+    public int Id {get; set;}
 
 
 }

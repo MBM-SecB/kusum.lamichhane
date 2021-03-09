@@ -59,5 +59,3 @@ public class EmployeeController : Controller
         return RedirectToAction(nameof(Index));
     }
 }
-    }
-}
