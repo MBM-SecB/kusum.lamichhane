@@ -6,14 +6,17 @@ using Microsoft.AspNetCore.Mvc;
 [ApiController]
 public class StudentController: ControllerBase
 {
+    private readonly StudentContext db;
+    public StudentController(StudentContext _db){
+        db=_db;
+    }
     [HttpGet]
     [Route("all")]
     public ActionResult getAllStudents()
     {
-        var students = new string[] {"Kusum", "Utsav"};
+        
 
-        students = null;
-
+        var students = db.Students.ToList();
         if(students == null)
         {
             return BadRequest();
