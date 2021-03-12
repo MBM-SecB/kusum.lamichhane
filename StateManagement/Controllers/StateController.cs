@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Http;
 
 public class StateController : Controller
 {
@@ -7,8 +8,7 @@ public class StateController : Controller
         var name = "Kusum Lamichhane";
         // CookieOptions
         Response.Cookies.Append("user", name);
-//
-
+      HttpContext.Session.SetString("address","ktm");
         return View();
     }
     [HttpGet]
