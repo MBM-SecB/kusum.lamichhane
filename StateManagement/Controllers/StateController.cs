@@ -14,11 +14,25 @@ public class StateController : Controller
     [HttpGet]
     public ViewResult Second(string name, int age)
     {
+        var userAddress = HttpContext.Session.GetString("address");
+
+        //2.2 Temp data
+
+    TempData["CollegeName"] = "mbm college";    
         return View();
     }
     [HttpPost]
     public bool Second(string collegeName)
     {
         return true;
+    }
+    public ViewResult Third()
+    {
+        var cName = TempData["collegeName"]; 
+        byte value =67;
+
+        ViewData["Name1"]= "abc from viewdata";
+        ViewBag.Name ="kusum";
+        return View(value);
     }
 }
